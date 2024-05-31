@@ -22,7 +22,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
-import com.example.inventory.InventoryApp
 import com.example.inventory.ui.theme.InventoryTheme
 import androidx.compose.material3.Surface as Surface1
 
