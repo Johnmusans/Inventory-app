@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-@file:OptIn(ExperimentalMaterial3Api::class)
-
-package com.example.inventoryapp
+package com.example.inventory
 
 import androidx.compose.material.icons.Icons.Filled
 import androidx.compose.material.icons.filled.ArrowBack
@@ -31,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.inventory.R.string
 import com.example.inventory.ui.navigation.InventoryNavHost
 
 /**
@@ -53,20 +52,17 @@ fun InventoryTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior? = null,
     navigateUp: () -> Unit = {}
 ) {
-    CenterAlignedTopAppBar(
-        title = { Text(title) },
+    CenterAlignedTopAppBar(title = { Text(title) },
         modifier = modifier,
         scrollBehavior = scrollBehavior,
         navigationIcon = {
             if (canNavigateBack) {
                 IconButton(onClick = navigateUp) {
-                    val string
                     Icon(
                         imageVector = Filled.ArrowBack,
                         contentDescription = stringResource(string.back_button)
                     )
                 }
             }
-        }
-    )
+        })
 }

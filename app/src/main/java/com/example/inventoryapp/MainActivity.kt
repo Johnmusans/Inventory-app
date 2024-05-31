@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.inventoryapp
+package com.example.inventory
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -21,9 +21,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.inventory.ui.theme.InventoryTheme
-import androidx.compose.material3.Surface as Surface1
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,9 +32,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             InventoryTheme {
                 // A surface container using the 'background' color from the theme
-                Surface1(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                Surface(
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
                     InventoryApp()
                 }

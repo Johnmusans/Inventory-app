@@ -22,7 +22,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.example.inventory.data.ItemsRepository
-import com.example.inventoryapp.ui.item.ItemEditDestination
 
 /**
  * ViewModel to retrieve and update an item from the [ItemsRepository]'s data source.

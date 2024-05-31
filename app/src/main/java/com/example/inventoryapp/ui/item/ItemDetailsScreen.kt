@@ -52,13 +52,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.inventory.InventoryTopAppBar
 import com.example.inventory.data.Item
-import com.example.inventory.ui.item.ItemDetailsUiState
 import com.example.inventory.ui.item.formatedPrice
 import com.example.inventory.ui.item.toItem
 import com.example.inventory.ui.navigation.NavigationDestination
 import com.example.inventory.ui.theme.InventoryTheme
-import com.example.inventoryapp.InventoryTopAppBar
 import com.example.inventoryapp.R
 
 object ItemDetailsDestination : NavigationDestination {
@@ -82,7 +81,8 @@ fun ItemDetailsScreen(
                 canNavigateBack = true,
                 navigateUp = navigateBack
             )
-        }, floatingActionButton = {
+        },
+        floatingActionButton = {
             FloatingActionButton(
                 onClick = { navigateToEditItem(0) },
                 shape = MaterialTheme.shapes.medium,
@@ -161,8 +161,7 @@ fun ItemDetails(
     item: Item, modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = modifier,
-        colors = CardDefaults.cardColors(
+        modifier = modifier, colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
             contentColor = MaterialTheme.colorScheme.onPrimaryContainer
         )
@@ -171,32 +170,40 @@ fun ItemDetails(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(dimensionResource(id = R.dimen.padding_medium)),
-            verticalArrangement = Arrangement.spacedBy(
-                dimensionResource(id = R.dimen.padding_medium)
-            )
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
         ) {
             ItemDetailsRow(
                 labelResID = R.string.item,
                 itemDetail = item.name,
                 modifier = Modifier.padding(
-                    horizontal = dimensionResource(id = R.dimen.padding_medium)
+                    horizontal = dimensionResource(
+                        id = R.dimen
+                            .padding_medium
+                    )
                 )
             )
             ItemDetailsRow(
                 labelResID = R.string.quantity_in_stock,
                 itemDetail = item.quantity.toString(),
                 modifier = Modifier.padding(
-                    horizontal = dimensionResource(id = R.dimen.padding_medium)
+                    horizontal = dimensionResource(
+                        id = R.dimen
+                            .padding_medium
+                    )
                 )
             )
             ItemDetailsRow(
                 labelResID = R.string.price,
                 itemDetail = item.formatedPrice(),
                 modifier = Modifier.padding(
-                    horizontal = dimensionResource(id = R.dimen.padding_medium)
+                    horizontal = dimensionResource(
+                        id = R.dimen
+                            .padding_medium
+                    )
                 )
             )
         }
+
     }
 }
 
@@ -213,9 +220,7 @@ private fun ItemDetailsRow(
 
 @Composable
 private fun DeleteConfirmationDialog(
-    onDeleteConfirm: () -> Unit,
-    onDeleteCancel: () -> Unit,
-    modifier: Modifier = Modifier
+    onDeleteConfirm: () -> Unit, onDeleteCancel: () -> Unit, modifier: Modifier = Modifier
 ) {
     AlertDialog(onDismissRequest = { /* Do nothing */ },
         title = { Text(stringResource(R.string.attention)) },
