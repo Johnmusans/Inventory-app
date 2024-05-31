@@ -27,10 +27,10 @@ import com.example.inventoryapp.ui.home.HomeDestination
 import com.example.inventoryapp.ui.home.HomeScreen
 import com.example.inventoryapp.ui.item.ItemDetailsDestination
 import com.example.inventoryapp.ui.item.ItemDetailsScreen
-import com.example.inventory.ui.item.ItemEditDestination
-import com.example.inventory.ui.item.ItemEditScreen
-import com.example.inventory.ui.item.ItemEntryDestination
-import com.example.inventory.ui.item.ItemEntryScreen
+import com.example.inventoryapp.ui.item.ItemEditDestination
+import com.example.inventoryapp.ui.item.ItemEditScreen
+import com.example.inventoryapp.ui.item.ItemEntryDestination
+import com.example.inventoryapp.ui.item.ItemEntryScreen
 
 /**
  * Provides Navigation graph for the application.
